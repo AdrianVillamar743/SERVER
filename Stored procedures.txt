@@ -1,0 +1,22 @@
+/*Created by Adrian Villamar */
+CREATE DATABASE IF NOT EXISTS jsp;
+use jsp;
+
+DELIMITER $$
+
+DROP PROCEDURE IF EXISTS sp_crear_tabla_y_db$$
+
+CREATE PROCEDURE sp_crear_tabla_y_db()
+BEGIN
+CREATE TABLE IF NOT EXISTS empledos (
+    id 	 		INT 			  	AUTO_INCREMENT PRIMARY KEY,
+    nombre 		VARCHAR		(255) 	NOT NULL,
+    telefono 	VARCHAR		(255) 	NOT NULL,
+    direccion		VARCHAR	 	(255)	NOT NULL
+)  ENGINE=INNODB;
+
+END$$
+
+DELIMITER ;
+
+call sp_crear_tabla_y_db;
